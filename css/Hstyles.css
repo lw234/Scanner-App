@@ -1,0 +1,68 @@
+body {
+  background-size: cover;
+ -webkit-background-size: cover;
+ width:100%;
+ height: 1000px;
+}
+#recipeScanner{
+	text-align: center;
+	font-weight: bold;
+	color: #14D970;
+}
+
+
+#startScan,#recipesResult{
+	max-width:70%;
+	margin:20% auto;
+	background-color: #E66545; 
+}
+ #pastRecipes{
+    max-width:70%;
+    margin:20% auto;
+    background-color: #4DC47E; 
+}
+.glyphicon.glyphicon-home,.glyphicon.glyphicon-chevron-left,.glyphicon.glyphicon-star{
+    font-size: 23px;
+    color:black;
+}
+
+.btn.btn-default.homebutton{
+background-color: lightgrey;
+}
+
+.row.r1, .row.r2{
+	background-color: lightgrey;
+}
+
+#recipes{
+	font-size: 1.2em;
+	text-align: center;
+}
+.list-group-item{
+	margin-left:10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+h3#pancake{
+	font-size:1.8em;
+	text-align: center;
+	display: inline-block;
+	margin: 10px auto;
+}
+
+hr{
+	margin:1px;
+}
+
+h4{
+	text-indent:10px;
+}
+
+#results{
+	margin-left:20px;
+}
+
+#recipesResult{
+	display:none;
+}

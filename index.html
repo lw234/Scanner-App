@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/Hstyles.css" rel="stylesheet" media="screen">
+ 	</head>
+  <body background="./Img/background.PNG">
+  	
+  	<h1 id='recipeScanner'>Recipe Scanner</h1>
+	<div class='row'>
+		<div class ='col-sm-4 col-sm-offset-4'>
+			<a class ='btn btn-primary btn-lg btn-block' id='startScan' href="#">Scan</a>
+			<a class ='btn btn-primary btn-lg btn-block' id='pastRecipes' href="pastrecipes.html">Past recipes</a>
+			<a class ='btn btn-primary btn-lg btn-block' id='recipesResult' href="recipesresult.html">Recipes results</a>
+		</div>
+	</div>
+	<div id="results"></div>
+	
+	<script type="text/javascript">
+		var resultDiv;
+
+		document.addEventListener("deviceready", init, false);
+		function init() {
+		document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+		resultDiv = document.querySelector("#results");
+		}
+
+		function startScan() {
+
+		cordova.plugins.barcodeScanner.scan(
+			function (result) {
+			var s = "Result: " + result.text + "<br/>" +
+			"Format: " + result.format +"<br/>";
+			if(result.text=='036000291452'){
+				s+="Product found: Egg." + '<br/>' + 'Please check the recipes results' ;
+				document.querySelector('#recipesResult').style.display='block';
+			}
+			resultDiv.innerHTML = s;
+		}, 
+		function (error) {
+			alert("Scanning failed: " + error);
+		}
+		);
+		}
+</script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
